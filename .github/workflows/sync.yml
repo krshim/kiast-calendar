@@ -1,0 +1,39 @@
+name: Drone Calendar Sync
+
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 매일 오전 7시 KST (UTC 22:00 전날)
+  workflow_dispatch:       # 수동 실행
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Chrome & ChromeDriver
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q google-chrome-stable
+          pip install webdriver-manager
+
+      - name: Write Google credentials files
+        run: |
+          echo '${{ secrets.GOOGLE_CREDENTIALS_JSON }}' > credentials.json
+          echo '${{ secrets.GOOGLE_TOKEN_JSON }}' > token.json
+
+      - name: Run sync
+        env:
+          DRONE_ID: ${{ secrets.KIAST_ID }}
+          DRONE_PW: ${{ secrets.KIAST_PW }}
+        run: python main.py
