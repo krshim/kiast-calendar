@@ -149,23 +149,38 @@ def _fetch_reservation_list(driver: webdriver.Chrome) -> list[_ResSummary]:
     except NoSuchElementException as e:
         logger.warning(f"날짜 입력 요소 없음: {e}")
 
-    summaries = []
-    for row in driver.find_elements(By.CSS_SELECTOR, "#tbody tr"):
-        style = row.get_attribute("style") or ""
-        if "display:none" in style.replace(" ", ""):
-            continue
-        cells = row.find_elements(By.TAG_NAME, "td")
-        if len(cells) < 6:
-            continue
-        texts = [c.text.strip() for c in cells[:6]]
-        if not any(texts):
-            continue
-        summaries.append(_ResSummary(
-            recept_id=texts[0],
-            center=texts[1],
-            status=texts[4],
-            apply_date=texts[5].replace(".", "-").strip(),
-        ))
+    def _parse_page() -> list[_ResSummary]:
+        results = []
+        for row in driver.find_elements(By.CSS_SELECTOR, "#tbody tr"):
+            style = row.get_attribute("style") or ""
+            if "display:none" in style.replace(" ", ""):
+                continue
+            cells = row.find_elements(By.TAG_NAME, "td")
+            if len(cells) < 6:
+                continue
+            texts = [c.text.strip() for c in cells[:6]]
+            if not any(texts):
+                continue
+            results.append(_ResSummary(
+                recept_id=texts[0],
+                center=texts[1],
+                status=texts[4],
+                apply_date=texts[5].replace(".", "-").strip(),
+            ))
+        return results
+
+    try:
+        page_count = int(driver.find_element(By.ID, "pageCount").get_attribute("value") or "1")
+    except NoSuchElementException:
+        page_count = 1
+    logger.info(f"총 페이지 수: {page_count}")
+
+    summaries = _parse_page()
+    for page in range(2, page_count + 1):
+        logger.info(f"페이지 이동: {page}/{page_count}")
+        driver.execute_script(f"moveNextPage({page});")
+        time.sleep(2)
+        summaries.extend(_parse_page())
 
     logger.info(f"목록 {len(summaries)}건 확인")
     return summaries
