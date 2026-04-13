@@ -1,0 +1,525 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>드론비행시험센터</title><meta name="description" content=""><meta name="author" content=""><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><link rel="stylesheet" href="/css/jquery/jquery-ui-1.13.2/jquery-ui.css"><link rel="stylesheet" href="/css/bootstrap-5.3.1/css/bootstrap.css"><link rel="stylesheet" href="/css/glyphicon_bootstrap.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/style_ast.css"><link rel="stylesheet" href="/css/swiper.css"><link rel="stylesheet" href="/css/common_style.css"><link rel="stylesheet" href="/css/fullpage.css"><link rel="stylesheet" href="/fonts/pretendard-gov-subset.css"><script src="/js/bootstrap-5.3.1/js/bootstrap.min.js"></script><script src="/js/jquery/jquery-3.1.0.min.js"></script><script src="/js/jquery/jquery.fullPage.js"></script><script src="/js/jquery/jquery-ui-1.13.2/jquery-ui.min.js"></script><script src="/js/jquery/jquery-validation-1.19.5/jquery.validate.min.js"></script><script src="/js/libs/js.cookie.js"></script><script src="/js/libs/SessionTimeout.js"></script><script src="/js/libs/moment/moment.min.js"></script><script src="/js/libs/moment/moment-with-locales.js"></script><script src="/js/libs/moment/moment-timezone.js"></script><script src="/js/common.js"></script><script src="/js/common_script.js"></script><script src="/js/swiper-bundle.min.js"></script><script src="/js/swiper_custom.js"></script><script src="/js/fullpage_control.js"></script><script src="/js/script.js"></script></head><body>
+		<div id="wrapper" class="main">
+			<!-- skipNav -->
+			<div id="skip">
+				<strong class="hide">반복영역 건너뛰기</strong>
+				<ul>
+					<li><a href="#content">본문 바로가기</a></li>
+					<li><a href="#gnb">상단메뉴 바로가기</a></li>
+				</ul>
+			</div>
+	
+			
+
+
+<form name="topForm" id="topForm" method="POST">
+	<input type="hidden" name="actionID" value="">
+	<input type="hidden" name="root" value="">  
+	<input type="hidden" name="menuUrl">
+</form>
+
+<!-- header -->
+<header id="header">
+	<div class="hd-wrapper">
+		<!-- 로고 -->
+		<div id="logo">
+			<a href="/main.do" style="display: block;">
+				<img src="/images/logo/ast_rm_logo.svg" alt="드론비행시험센터 예약관리 시스템">
+			</a>
+		</div>
+
+		<!-- 메인화면 탑메뉴 -->
+		<div class="menu-wrapper">
+			<!-- 대메뉴 -->
+			<div class="hd main-gnb">
+				<div class="gnb-wrap">
+					<ul id="gnb" class="gnb">
+						<li class="screen"></li>
+						<li class="gnb-list"><a class="gnb-tit line">소개</a><ul class="dep2"><li><a href="https://www.kiast.or.kr/kr/index.do">기관소개</a></li><li><a href="/intro/orgnztn/orgnztn.do">조직소개</a></li></ul></li><li class="gnb-list"><a class="gnb-tit line">비행시험센터</a><ul class="dep2"><li><a href="/drncenter/aircenter/aircenter.do">비행시험센터 소개</a></li><li><a href="/drncenter/reserve/reserve.do">비행시험센터 이용신청</a></li><li><a href="/drncenter/ula/reserve.do">초경량비행장치 공역 이용신청</a></li></ul></li><li class="gnb-list"><a class="gnb-tit line">비행성능시험</a><ul class="dep2"><li><a href="/drnreport/intro/intro.do">비행성능시험 소개</a></li><li><a href="/drnreport/reserve/reserve.do">비행성능시험 신청</a></li></ul></li><li class="gnb-list"><a class="gnb-tit line">드론시범공역</a><ul class="dep2"><li><a href="/drnspace/airspace/airspace.do">드론시범공역 소개</a></li><li><a href="/drnspace/reserve/reserve.do">드론시범공역 이용신청</a></li></ul></li><li class="gnb-list"><a class="gnb-tit line">알림마당</a><ul class="dep2"><li><a href="/aboard/9/List.do">공지사항</a></li><li><a href="/aboard/policy/policy.do">이용정책</a></li><li><a href="/aboard/faq/List.do">FAQ</a></li><li><a href="/aboard/qna/List.do">Q&amp;A</a></li></ul></li><li class="gnb-list"><a class="gnb-tit line">마이페이지</a><ul class="dep2"><li><a href="/mypage/drncntrusestatus/drncntrusestatus.do">비행시험센터 이용현황</a></li><li><a href="/mypage/drnaspcusestatus/drnaspcusestatus.do">드론시범공역 이용현황</a></li><li><a href="/mypage/drncntrusestatus/drnulause.do">초경량비행장치 공역 이용현황</a></li><li><a href="/mypage/drnreportusestatus/drnreportusestatus.do">성능성적서 발급이력</a></li><li><a href="/mypage/user/user.do">회원정보 수정</a></li><li><a href="/mypage/user/credentials.do">비밀번호 수정</a></li></ul></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="base_gnb_wrapper">
+			
+            <!-- Base-header-utility-menu -->
+			<div class="base_gnb_um">
+				<button class="gnb_um_btn all_search">통합검색</button>
+	
+				
+					<button id="loginBtn" class="gnb_um_btn login">로그인</button>
+				
+	
+				
+			</div>
+		</div>
+		<!-- 모바일 메뉴! // 반응형시에 노출 -->
+		<div class="mobile-menu">
+			<a href="#" class="hide-text mobilemenu-btn">메뉴보기</a>
+		</div>
+		<div id="mobilemenu-wrapper">
+			<div class="sub-top-menu">
+				<!-- 로그인 전 // 회원가입 버튼 -->
+				
+					<div class="btn-header before-login ">
+						<p>로그인을 진행해주세요.</p>
+						<!-- 로그인 -->
+						<a id="mLoginBtn" class="btn btn sm btn-txt login">로그인</a>
+					</div>
+				
+
+				
+			</div>
+			<ul class="menu-list accordion">
+				<li class="toggle accordion-toggle"><a href="" class="menu-link">소개</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="https://www.kiast.or.kr/kr/index.do">기관소개</a></li><li><a class="head" href="/intro/orgnztn/orgnztn.do">조직소개</a></li></ul></li><li class="toggle accordion-toggle"><a href="" class="menu-link">비행시험센터</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="/drncenter/aircenter/aircenter.do">비행시험센터 소개</a></li><li><a class="head" href="/drncenter/reserve/reserve.do">비행시험센터 이용신청</a></li><li><a class="head" href="/drncenter/ula/reserve.do">초경량비행장치 공역 이용신청</a></li></ul></li><li class="toggle accordion-toggle"><a href="" class="menu-link">비행성능시험</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="/drnreport/intro/intro.do">비행성능시험 소개</a></li><li><a class="head" href="/drnreport/reserve/reserve.do">비행성능시험 신청</a></li></ul></li><li class="toggle accordion-toggle"><a href="" class="menu-link">드론시범공역</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="/drnspace/airspace/airspace.do">드론시범공역 소개</a></li><li><a class="head" href="/drnspace/reserve/reserve.do">드론시범공역 이용신청</a></li></ul></li><li class="toggle accordion-toggle"><a href="" class="menu-link">알림마당</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="/aboard/9/List.do">공지사항</a></li><li><a class="head" href="/aboard/policy/policy.do">이용정책</a></li><li><a class="head" href="/aboard/faq/List.do">FAQ</a></li><li><a class="head" href="/aboard/qna/List.do">Q&amp;A</a></li></ul></li><li class="toggle accordion-toggle"><a href="" class="menu-link">마이페이지</a> </li><li class="menu-submenu accordion-content"><ul><li><a class="head" href="/mypage/drncntrusestatus/drncntrusestatus.do">비행시험센터 이용현황</a></li><li><a class="head" href="/mypage/drnaspcusestatus/drnaspcusestatus.do">드론시범공역 이용현황</a></li><li><a class="head" href="/mypage/drncntrusestatus/drnulause.do">초경량비행장치 공역 이용현황</a></li><li><a class="head" href="/mypage/drnreportusestatus/drnreportusestatus.do">성능성적서 발급이력</a></li><li><a class="head" href="/mypage/user/user.do">회원정보 수정</a></li><li><a class="head" href="/mypage/user/credentials.do">비밀번호 수정</a></li></ul></li>
+			</ul>
+		</div>
+		<!-- 검색팝업 -->
+		<div class="all_search_pop">
+			<div class="search_wrap">
+				<div class="search_box">
+					<label for="txt_search" class="masked">검색어 입력</label> <input id="top_txt_search" type="text" class="txt_search" placeholder="검색어를 입력하세요.">
+					<button type="submit" class="btn_search" title="검색" id="btn_top_total_search"></button>
+				</div>
+				
+				<form id="goTopTotalSearchForm" name="goTopTotalSearchForm" method="POST" action="/search.do">
+					<input type="hidden" id="actionID" value="">
+					<input type="hidden" id="search_text" name="search_text" value="">
+				</form>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script type="text/javascript">
+if(false)
+	checkSession();
+
+var userGroup = 'null'; 
+var userNm = 'null'; 
+
+	jQuery(document).ready(function(){
+		//로그인
+		$("#loginBtn").bind("click", function(){
+			location.href = "/login.do";
+		});
+		
+		//모바일 로그인
+		$("#mLoginBtn").bind("click", function(){
+			location.href = "/login.do";
+		});		
+
+		//로그아웃
+		$("#logoutBtn").bind("click", function(){
+			if (confirm("로그아웃 하시겠습니까?")) {
+				doLogout();   
+			}
+		});
+		
+		//모바일 로그아웃
+		$("#mLogoutBtn").bind("click", function(){
+			if (confirm("로그아웃 하시겠습니까?")) {
+				doLogout();   
+			}
+		});
+
+		// 화면 크기 변경 시 드롭다운 닫기
+		$(window).on('resize', function() {
+			closeDropdowns();
+		});
+		
+		// 클릭 외부 시 드롭다운 닫기
+	    $(document).on('click', function(event) {
+	        if (!$(event.target).closest('.mypage').length) {
+	            closeDropdowns();
+	        }
+	    });
+		
+		//마이페이지 드롭다운 토글
+		$("#mypageBtn").bind("click", function() {
+			event.stopPropagation(); // 클릭 이벤트 전파 방지
+			toggleDropdown();
+		})
+
+		// 통합검색 입력박스 엔터키 이벤트
+		$("#top_txt_search").on('keypress', function(event) {
+			if (event.keyCode === 13) { // Enter key
+				$("#btn_top_total_search").click();
+			}
+		});
+			
+		// 통합검색 버튼 클릭 이벤트
+	    $("#btn_top_total_search").on('click', function(event) {
+			$("#top_txt_search").val() == "" ? alert("검색어를 입력해주세요.") : goTopTotalSearch($("#top_txt_search").val());
+	    });
+		
+		$("#reserveCancelConfirmBtn").prop("disabled", true);
+		$("#reserveCancelCheck").on("change", function() {
+			$("#reserveCancelConfirmBtn").prop("disabled", !this.checked);
+		});
+	});
+	
+	//통합검색 페이지로 이동
+	function goTopTotalSearch(search_text){
+		var goTopTotalSearchForm = document.getElementById('goTopTotalSearchForm');
+		goTopTotalSearchForm.search_text.value = search_text; //검색어	
+		goTopTotalSearchForm.submit();		
+	}
+	
+
+     
+	function doLogout() {		   
+		 // JSP에서 JavaScript로 값 전달
+        var userId = null;    
+		
+		var param = {};             
+		if(userId !== "null") {
+			param = {
+				actionID: "LOGOUT_OK",   
+		        user_id: userId
+		    };	       
+			
+	       	$.ajax({
+	       		type: "POST",
+	       		url: "/login.do?v=" + (new Date().getTime()),
+	       		data: param,
+	       		dataType: "json",
+	       		async: true,
+	       		cache: false,
+				// Ajax 통신 전 로딩표시
+	//                beforeSend:function(){
+	//             	   $('#loadbar').show();
+	//			}, 
+				success: function(e) {
+	       			if(e.resCode == "0") {
+	   			       
+	   			       location.href = "/main.do";
+	       			} else {
+	       				alert(e.resMsg);
+	       			}
+	       		}, 
+	       		error: function() {
+	       				alert(e.resMsg);
+	       		},
+	             // Ajax 통신 완료 후 로딩숨김
+	             complete:function(){
+	                $('#loadbar').hide();
+	             } 
+	       	});
+		}
+	}	     
+	
+	// 모든 드롭다운을 숨김
+	function closeDropdowns() {
+		$('#mypageContent').hide();
+	}
+	 // 드롭다운 토글 함수
+    function toggleDropdown() {
+        $('#mypageContent').toggle(); // display 속성을 토글
+    }
+	 
+  	//미오픈 메뉴 alert처리
+	function nonOpenMenu(){
+		alert("준비중입니다.");
+	}
+	
+
+</script>
+
+<div id="pnltyAlert" class="modal_box" style="display:none;">
+	<div class="modal-tit">
+		<p>미통보 불참 패널티 안내</p>
+		<span class="close hide-text" onclick="closePnltyModal();">닫기</span>
+	</div>
+	<div class="modal-content">
+		<p>
+		</p>
+	</div>
+	<div class="modal-footer" style="float: right;">
+		<button type="button" class="btn tertiary sm" onclick="closePnltyModal();">닫기</button>
+	</div>
+</div>
+
+
+<div id="reserveCancelPopup" class="modal_box" style="display:none;">
+	<div class="modal-tit">
+		<p>예약 취소(불참) 안내</p>
+		<!-- <span class="close hide-text" onclick="closeCnclModal();">닫기</span> -->
+	</div>
+	<div class="modal-content">
+		<p>
+		</p>
+	</div>
+	<div class="modal-footer">
+		<div class="form-check">
+			<input type="checkbox" id="reserveCancelCheck">
+			<label for="reserveCancelCheck">위의 내용을 확인하였습니다.</label>
+        </div>
+		<button type="button" class="btn tertiary sm" id="reserveCancelConfirmBtn" onclick="closeReserveCancelPopup();" disabled="">확인</button>
+	</div>
+</div>
+<!-- body -->
+<div id="container">
+	<!-- 컨텐츠 영역 - 로그인-->
+	<div id="login_section">
+		<div class="login_box">
+			<form id="login-form" name="login-form" class="login-form" action="/login.do" method="POST">
+				<input type="hidden" name="actionID" value="LOGIN_OK">
+
+				<div class="login_tit">
+					<img src="/images/logo/ast_rm_logo.svg" alt="드론비행시험센터 예약관리 시스템">
+					<p>서비스를 이용하기 위해 아이디와 비밀번호를 이용하여 로그인해 주세요.</p>
+				</div>
+				<div class="form-group">
+					<div class="form-tit">
+						<label for="user_id">아이디</label>
+					</div>
+					<div class="form-conts">
+						<input type="text" name="user_id" id="user_id" class="form-control md" placeholder="아이디를 입력해 주세요.">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-tit">
+						<label for="password2">비밀번호</label>
+					</div>
+					<div class="form-conts">
+						<input type="hidden" name="password" id="password">
+						<input type="password" name="password2" id="password2" class="form-control md" placeholder="비밀번호를 입력해 주세요.">
+					</div>
+					<div class="form-check sm">
+						<input type="checkbox" id="save">
+						<label for="save">아이디 저장</label>
+					</div>
+				</div>
+				<button id="login" type="button" class="btn primary xlg">로그인</button>
+				<!-- 임시 테스트용 -->
+				<!-- <button id="encryptPwd" type="button" class="btn primary xlg">비밀번호 확인</button> -->
+				
+			</form>
+			<div class="login_ft">
+				<a href="javascript:window.open('/login/findAccount.go', 'newwindow', 'width=800, height=600');">아이디/비밀번호 찾기</a>
+				<a href="/join.do" class="joinin">회원가입</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="/js/cookie.js"></script><script src="/js/libs/sha256.js"></script> 	
+
+<script type="text/javascript">
+	var $$timerResultConfirm;
+	var qrCompleteCode = "";
+	jQuery(document).ready(function(){
+		// 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백
+		var userInputId = getCookie("userInputId");
+		$("input[name='user_id']").val(userInputId); 
+		
+		// 로그인 페이지 로딩시 입력칸에 ID가 있을경우, save 체크상태 유지
+		if($("input[name='user_id']").val() != ""){ 
+			$("#save").attr("checked", true); 
+		}
+		
+		$("#save").change(function(){ 
+			if($("#save").is(":checked")){ // ID 저장하기 체크시
+				var userInputId = $("input[name='user_id']").val();
+				setCookie("userInputId", userInputId, 365); // 365일 동안 쿠키 보관
+			}else{
+				deleteCookie("userInputId"); // ID 저장하기 체크 해제 시, 쿠키삭제
+			}
+		});
+		
+		$("input[name='user_id']").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+			if($("#save").is(":checked")){ // ID 저장하기를 체크한 상태시
+				var userInputId = $("input[name='user_id']").val();
+				setCookie("userInputId", userInputId, 365); // 365일 동안 쿠키 보관
+			}
+		});			
+		
+		$("input[name=user_id]").focus();
+		
+		$("input[name=user_id]").keydown(function (key) {
+			if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+				$("#login").click();
+			} 
+		});
+		
+		$("input[name=password2]").keydown(function (key) {
+			if(key.keyCode == 13){//키가 13이면 실행 (엔터는 13)
+				$("#login").click();
+			} 
+		});
+					
+		$("#login").bind("click", function(){
+			$("#login-form").submit();
+		});
+		
+		
+		$("#encryptPwd").bind("click", function(){
+			encryptPwd();
+		});
+		
+		
+	});
+
+	var errorClass = 'invalid';
+	var errorElement = 'em';
+	$(function() {
+		// Validation
+		$("#login-form").validate({
+			errorClass		: errorClass,
+			errorElement	: errorElement,
+			highlight: function(element) {
+				$(element).parent().removeClass('state-success').addClass("state-error");
+				$(element).removeClass('valid');
+			},
+			unhighlight: function(element) {
+				$(element).parent().removeClass("state-error").addClass('state-success');
+				$(element).addClass('valid');
+			},
+			submitHandler: function() {
+				/* $("#password").val(sha256_digest($("#password2").val())); */
+				$("#password").val($("#password2").val());
+				$("#password2").val("");
+				
+				return true;
+				
+			},
+			// Rules for form validation
+			rules : {
+				user_id : {
+					required : true
+				},
+				password2 : {
+					required : true,
+					maxlength : 30
+				}
+			},
+
+			// Messages for form validation
+			messages : {
+				user_id : {
+					required : '아이디를 입력해 주세요'
+				},
+				password2 : {
+					required : '비밀번호를 입력해 주세요'
+				}
+			},
+			// Do not change code below
+			errorPlacement : function(error, element) {
+				error.insertAfter(element);
+			}
+		});
+	});
+
+	
+
+//암호화된 비밀번호 찾기 (임시 테스트용)	
+function encryptPwd() {
+	if (confirm("비밀번호 암호화?")) {
+
+        var passwordInput = $("#join_password").val(); 
+      	///** var hashedPassword = sha256_digest(passwordInput); // SHA-256 해싱
+        
+        ///** console.log(hashedPassword);
+        
+        // FormData 객체 생성
+        var form_data = new FormData();
+
+        // 필수 데이터 추가
+        form_data.append("actionID", "ENCRYPTION_PWD_OK");
+        form_data.append("user_id", $("#user_id").val());
+        form_data.append("password", $("#password2").val()); 
+        $.ajax({
+            type : "POST",
+            url : "/login.do",
+            data : form_data,
+            dataType : "text",
+            async : true,
+            cache : false,
+            contentType : false,
+            processData : false,
+            enctype : 'multipart/form-data',
+            beforeSend: function (){
+                $('#loadbar').hide();
+            },
+            success : function(e){
+                console.log("sha256 PASSWORD ==> " + e);
+                alert(e);
+            },
+            error : function(){
+                alert('요청하신 처리가 실패했습니다.');
+                $('#loadbar').hide();
+            },
+            complete:function (){
+                $('#loadbar').hide();
+            }
+        });	
+
+	}
+}
+
+function doGPKILogin(target, form) {
+
+}
+
+</script>
+
+
+<!-- footer -->
+<!-- 개인정보처리방침 Form -->
+<form id="goPolicyForm" name="goPolicyForm" method="post" action="/policy.do">
+	<input type="hidden" id="actionID" name="actionID">
+</form>
+		
+<footer id="footer">
+    <div class="footer-wrap">
+        <div class="footer-inner">
+        	<div class="footer-row">
+	            <div class="footer-logo"><a href=""><span>KIAST드론예약관리시스템</span></a></div>
+	            <div class="footer-right-img"></div>
+	        </div>
+            <nav class="footer-nav">
+                <p>인천광역시 서구 로봇랜드로 155-11 로봇타워(16~18층) 기획경영본부·항공안전본부·감사실, 155-30 로봇연구소(1~3층) 항공인증본부·미래항공본부 </p>
+                <p>고객센터 : TEL. 032-727-5500 | Fax. 032-727-5660 평일:9:00~17:00/점심시간(11:30~13:00)토,일,공휴일은 휴무 </p>
+                <ul>
+                    <li><span>인천 : (032)567-1310, 5748</span></li>
+                    <li><span>화성 : (031)356-5520, 5524</span></li>
+                    <li><span>영월 : (033)375-5748</span></li>
+                    <li><span>보은 : (043)543-5747, 5748</span></li>
+                    <li><span>고성 : (055)673-5748, 5749</span></li>
+                    <li><span>의성 : (054)832-5748, 5749</span></li>
+                </ul>
+            </nav>
+            <div class="more_logos">
+                <!-- <em>가짜 웹접근성 인증마크👀</em> -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul class="private">
+                <li><a class="fw-bold" style="color:#FFEF3D;" onclick="goPolicy()">개인정보 처리방침</a></li>
+                <li><a href="">서비스 이용약관</a></li>
+                <li><a href="">이메일무단수집거부</a></li>
+            </ul>
+            <p class="copyright">Copyright (c) 2018 Korea Institute of Aviation Safety Technology. All Rights Reserved.</p>
+        </div>
+    </div>
+    <a href="#wrapper" class="top_btn hide-text">Top</a>
+</footer>
+        
+       
+<script type="text/javascript">
+
+   //개인정보처리방침 페이지 이동
+   function goPolicy() {
+		var actionID = "ACTION_MAIN_POLICY";
+		goPageTwo(goPolicyForm, actionID);
+   }
+        
+</script>
+</div>
+	
+		<script type="text/javascript">
+			</script>
+	
+</body></html>
